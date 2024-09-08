@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yash Calculator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .display {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-align: right;
+            font-size: 20px;
+            overflow-wrap: break-word;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ccc;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+
+        .operator {
+            background-color: #ff9933;
+        }
+
+        .equal {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        .clear {
+            background-color: #f44336;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display"></div>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="operator" onclick="appendOperator('+')">+</button>
+            <button class="operator" onclick="appendOperator('-')">-</button>
+            <button class="operator" onclick="appendOperator('*')">*</button>
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button class="operator" onclick="appendOperator('/')">/</button>
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button onclick="appendNumber('.')">.</button>
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="appendNumber('00')">00</button>
+            <button onclick="appendOperator('%')">%</button>
+        </div>
+    </div>
+
+    <script>
+        let display = document.getElementById('display');
+        let previousOperator = null;
+        let previousOperand = null;
+
+        function appendNumber(number) {
+            display.textContent += number;
+        }
+
+        function appendOperator(operator) {
+            if (previousOperator !== null) {
+                calculate();
+            }
+            previousOperator = operator;
+            previousOperand = parseFloat(display.textContent);
+            display.textContent += operator;
+        }
+
+        function calculate() {
+            let currentOperand = parseFloat(display.textContent.substring(display.textContent.lastIndexOf(previousOperator) + 1));
+            let result;
+
+            switch (previousOperator) {
+                case '+':
+                    result = previousOperand + currentOperand;
+                    break;
+                case '-':
+                    result = previousOperand - currentOperand;
+                    break;
+                case '*':
+                    result = previousOperand * currentOperand;
+                    break;
+                case '/':
+                    result = previousOperand / currentOperand;
+                    break;
+                case '%':
+                    result = previousOperand * (currentOperand / 100);
+                    break;
+            }
+
+            display.textContent = result;
+            previousOperator = null;
+            previousOperand = null;
+        }
+
+        function clearDisplay() {
+            display.textContent = '';
+            previousOperator = null;
+            previousOperand = null;
+        }
+    </script>
+</body>
+</html>

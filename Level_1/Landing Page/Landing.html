@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <title>GenWin</title>
+</head>
+<body>
+    <!-- Your HTML code here -->
+    <header>
+        <h1>GenWin</h1>
+        <p>Connect, Rate, Learn</p>
+        <div class="login-button">
+            <a href="#" class="cta-button" aria-label="Login to GenWin" onclick="toggleLoginForm()">Login</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="features">
+            <h2>Key Features</h2>
+            <div class="feature">
+                <h3>Anonymous Profiles</h3>
+                <p>Share, connect, and rate profiles without revealing your identity.</p>
+            </div>
+            <div class="feature">
+                <h3>Profile Ratings</h3>
+                <p>Rate your friends' profiles out of 10 and discover popular profiles.</p>
+            </div>
+            <div class="feature">
+                <h3>Study Hub</h3>
+                <p>Access notes and questions tailored to your preferences and courses.</p>
+            </div>
+        </section>
+
+        <section id="cta">
+            <h2>Join the Community</h2>
+            <p>Connect with your college peers. Rate profiles, share notes, and explore anonymously.</p>
+            <a href="#" class="cta-button animated pulse">Sign Up</a>
+        </section>
+    </main>
+
+    <footer>
+        <p class="watermark">Designed by MohsinMalikk</p>
+        &copy; 2023 GenWin. All rights reserved.
+    </footer>
+
+    <!-- Login Form -->
+    <div id="login-form" class="hidden">
+        <form action="process-login.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="cta-button">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function toggleLoginForm() {
+            const loginForm = document.getElementById('login-form');
+            loginForm.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
