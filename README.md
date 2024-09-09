@@ -1,19 +1,20 @@
 **# Web-Development-Internship-By-CodSoft**
+
 **Welcome to CodSoft's Web Development Internship!**
 
 This program is designed to provide hands-on experience in creating, designing, and maintaining websites and web applications. Whether you're a student, beginner, or someone looking to sharpen their development skills, this internship will offer real-world projects to help you grow as a web developer.
 
 **Key Focus Areas:**
 
-Frontend Development: HTML, CSS, JavaScript, and responsive design.
+**Frontend Development:** HTML, CSS, JavaScript, and responsive design.
 
-Backend Development: Introduction to server-side technologies like Node.js, PHP, or Python.
+**Backend Development:** Introduction to server-side technologies like Node.js, PHP, or Python.
 
-Version Control: Learning Git & GitHub for project collaboration.
+**Version Control:** Learning Git & GitHub for project collaboration.
 
-Web Frameworks: Experience with frameworks such as React, Angular, or Vue.js.
+**Web Frameworks:** Experience with frameworks such as React, Angular, or Vue.js.
 
-Database Management: Introduction to databases like MySQL, MongoDB, and their integration with web applications.
+**Database Management:** Introduction to databases like MySQL, MongoDB, and their integration with web applications.
 
 **What You'll Gain:**
 
