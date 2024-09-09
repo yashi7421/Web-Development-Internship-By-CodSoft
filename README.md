@@ -26,4 +26,5 @@ Willingness to learn and adapt to new tools and technologies.
 Ability to collaborate in a team environment using GitHub.
 
 How to Apply:
+
 To apply for this internship, please submit your resume and a portfolio (if available) to CodSoft's official application portal https://www.codsoft.in/. We look forward to helping you advance your career in web development!
